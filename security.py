@@ -10,8 +10,30 @@ class Security():
     
     # Caesar Cipher Decryption
     def CaesarDecrypt(self, text):
-        return
+        CORESTRING = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789(\n ~`!@#$%^&*()_-+=<>,.?/\|[]}{;:)"
+        SHIFT = int(input("\nEnter Shift: "))
+        SHIFT = int(SHIFT)
 
+        NewString = ""
+        for character in text:
+            char = CORESTRING.find(character)
+            new_char = char - SHIFT
+            
+            if character in CORESTRING:
+                NewString = NewString + CORESTRING[new_char]
+            else:
+                NewString = NewString + character
+        
+        CaesarDecryptString = NewString
+
+        f = open("CaesarCipherDecrypted.txt", "w")
+        f.write(NewString)
+        f.close()
+
+        print("Caesar decrypted file saved in Directory.")
+        
+        return CaesarDecryptString
+    
     # Polyalphabetic Encrypt
     def PolyEncrypt(self, text):
         return
