@@ -11,7 +11,7 @@ class Security():
     # Caesar Cipher Decryption
     def CaesarDecrypt(self, text):
         return
-    
+
     # Polyalphabetic Encrypt
     def PolyEncrypt(self, text):
         return
